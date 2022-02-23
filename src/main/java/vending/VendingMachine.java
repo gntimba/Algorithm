@@ -13,11 +13,11 @@ public class VendingMachine {
 
     public Integer[] CalculateChange(Double price, Double tenderAmount) {
         List<Integer> cents = new ArrayList<>();
-        double change = (tenderAmount * 100) - (price * 100);
+        Double change = (tenderAmount * 100) - (price * 100);
         for (int i = coinDenominations.length - 1; i >= 0; i--) {
             int coin = coinDenominations[i];
             int coinCount = 0;
-            int eg = (int) change / coin;
+            int eg =  change.intValue() / coin;
             for (int j = 0; j < eg; j++) {
                 cents.add(coin);
                 coinCount += coin;
